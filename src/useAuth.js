@@ -83,11 +83,15 @@
 // export default useAuth;
 
 // useAuth.js
+
 import { useState, useEffect, useRef, useCallback } from "react";
 import Keycloak from "keycloak-js";
 
+var KEYCLOAK_URL = "http://10.3.0.12:8080/";
+var REACT_URL = "http://10.3.0.12";
+
 const client = new Keycloak({
-	url: process.env.KEYCLOAK_URL,
+	url: KEYCLOAK_URL,
 	realm: "NHAI",
 	clientId: "frontend",
 });
@@ -138,7 +142,7 @@ const useAuth = () => {
 
 	const login = useCallback(() => client.login(), []);
 	const logout = useCallback(
-		() => client.logout({ redirectUri: process.env.REACT_URL }),
+		() => client.logout({ redirectUri: REACT_URL }),
 		[]
 	);
 	const hasRole = useCallback(

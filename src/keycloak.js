@@ -1,7 +1,10 @@
 import Keycloak from "keycloak-js";
 
+var KEYCLOAK_URL = "http://10.3.0.12:8080/";
+var REACT_URL = "http://10.3.0.12";
+
 let initOptions = {
-	url: "http://localhost:8080/",
+	url: KEYCLOAK_URL,
 	realm: "NHAI",
 	clientId: "frontend",
 };
