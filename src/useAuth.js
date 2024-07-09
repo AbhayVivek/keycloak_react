@@ -87,8 +87,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Keycloak from "keycloak-js";
 
-var KEYCLOAK_URL = "http://10.3.0.12:8080/";
-var REACT_URL = "http://10.3.0.12";
+var KEYCLOAK_URL = "http://10.3.0.12/";
+var REACT_URL = "http://10.3.0.12/react";
 
 const client = new Keycloak({
 	url: KEYCLOAK_URL,

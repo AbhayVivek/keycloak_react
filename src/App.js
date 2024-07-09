@@ -291,7 +291,7 @@ function App() {
 		hasRole,
 		keycloak,
 	} = useAuth();
-	console.log(keycloak);
+	// console.log(keycloak);
 	const [infoMessage, setInfoMessage] = useState("");
 	const [profile, setProfile] = useState({});
 	const [attr, setAttr] = useState({});
