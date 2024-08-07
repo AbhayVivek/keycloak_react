@@ -3,8 +3,8 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import Keycloak from "keycloak-js";
 
-var KEYCLOAK_URL = "http://10.3.0.12/";
-var REACT_URL = "http://10.3.0.12/react";
+var KEYCLOAK_URL = "http://10.3.0.12";
+var REACT_URL = "http://localhost:3000";
 
 // var KEYCLOAK_URL = "http://localhost:8080";
 // var REACT_URL = "http://localhost:3000";
