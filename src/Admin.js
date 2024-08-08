@@ -268,7 +268,7 @@ const Admin = () => {
 
 	const fetchUsers = async () => {
 		try {
-			const response = await axios.get("http://localhost:4000/users");
+			const response = await axios.get("http://10.3.0.16:4000/users");
 			setUsers(response.data);
 		} catch (error) {
 			console.error("Error fetching users", error);
@@ -278,7 +278,7 @@ const Admin = () => {
 	const fetchRoles = async (id) => {
 		try {
 			const response = await axios.get(
-				`http://localhost:4000/users/${id}/roles/realm`
+				`http://10.3.0.16:4000/users/${id}/roles/realm`
 			);
 			setRoles(response.data);
 		} catch (error) {
@@ -289,7 +289,7 @@ const Admin = () => {
 	const handleUserClick = async (user) => {
 		try {
 			const response = await axios.get(
-				`http://localhost:4000/users/${user.id}/attributes`
+				`http://10.3.0.16:4000/users/${user.id}/attributes`
 			);
 			const userDetails = { ...user, attributes: response.data };
 			setSelectedUser(userDetails);
@@ -307,7 +307,7 @@ const Admin = () => {
 	const handleAddUser = async () => {
 		const newUser = { username: "New_User", email: "newuser@example.com" };
 		try {
-			const response = await axios.post("http://localhost:4000/users", newUser);
+			const response = await axios.post("http://10.3.0.16:4000/users", newUser);
 			setUsers([...users, response.data]);
 			setFormState("addnew");
 		} catch (error) {
@@ -317,8 +317,8 @@ const Admin = () => {
 
 	const handleUpdateUser = async (userData) => {
 		try {
-			await axios.put(`http://localhost:4000/users/${userData.id}`, userData);
-			await axios.put(`http://localhost:4000/users/${userData.id}/attributes`, {
+			await axios.put(`http://10.3.0.16:4000/users/${userData.id}`, userData);
+			await axios.put(`http://10.3.0.16:4000/users/${userData.id}/attributes`, {
 				attributes: userData.attributes,
 			});
 			fetchUsers();
@@ -330,7 +330,7 @@ const Admin = () => {
 	const handleAddRole = async (roleName) => {
 		try {
 			const response = await axios.post(
-				`http://localhost:4000/users/${selectedUser.id}/roles/realm`,
+				`http://10.3.0.16:4000/users/${selectedUser.id}/roles/realm`,
 				{
 					roleName: roleName,
 				}
